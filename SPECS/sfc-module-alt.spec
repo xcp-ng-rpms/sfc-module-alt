@@ -8,14 +8,14 @@
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{driver_name}-module-alt
 Version: 5.3.18.1012
-Release: 1%{?dist}
+Release: 1.0.kernelpreview.1%{?dist}
 License: GPL-2.0-only
 
 # Extracted from https://www.amd.com/content/dam/amd/en/support/downloads/solarflare/drivers-software/linux/XN-201161-LS-5-Solarflare-NET-v5-driver-source-RPM.zip
 Source0: sfc-5.3.18.1012.tar.gz
 
 BuildRequires: gcc
-BuildRequires: kernel-devel
+BuildRequires: kernel-devel >= 4.19.325-cip137.8.0.46.16
 Provides: vendor-driver
 Requires: kernel-uname-r = %{kernel_version}
 Requires(post): /usr/sbin/depmod
@@ -52,5 +52,8 @@ find %{buildroot}/lib/modules/%{kernel_version} -name "*.ko" -type f | xargs chm
 /lib/modules/%{kernel_version}/*/*.ko
 
 %changelog
+* Mon Nov 16 2026 Quentin Casasnovas <quentin.casasnovas@vates.tech> - 5.3.18.1012-1.0.kernelpreview.1
+- Rebuild for kernel v4.19.325-cip137
+
 * Fri Mar 20 2026 Tu Dinh <ngoc-tu.dinh@vates.tech> - 5.3.18.1012-1
 - Initial package, version 5.3.18.1012
