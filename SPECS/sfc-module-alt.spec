@@ -8,7 +8,7 @@
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{driver_name}-module-alt
 Version: 5.3.18.1012
-Release: 1.0.kernelpreview.1%{?dist}
+Release: 1.0.kernelpreview.1.0.testv0.1%{?dist}
 License: GPL-2.0-only
 
 # Extracted from https://www.amd.com/content/dam/amd/en/support/downloads/solarflare/drivers-software/linux/XN-201161-LS-5-Solarflare-NET-v5-driver-source-RPM.zip
